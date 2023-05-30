@@ -1,5 +1,5 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+describe('💙 썸네일 생성기 테스트', () => {
+  it('✨ 썸네일 생성기 페이지에 진입합니다.', () => {
+    cy.visit('../../index.html');
+  });
+});
