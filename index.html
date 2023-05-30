@@ -8,20 +8,20 @@
   </head>
   <body>
     <main class="thumbnail">
-      <div class="bg">
-        <h2 id="title">제목을 입력해주세요.</h2>
-        <p id="content">내용을 입력해주세요.</p>
+      <div class="bg" data-test="bg">
+        <h2 id="title" data-test="title">제목을 입력해주세요.</h2>
+        <p id="content" data-test="content">내용을 입력해주세요.</p>
       </div>
     </main>
 
     <div>
-      <input class="title_input" type="text" placeholder="제목" />
-      <input class="content_input" type="text" placeholder="내용" />
-      <button class="bg-color_button">배경 색상 변경</button>
+      <input class="title-input" type="text" placeholder="제목" data-test="title-input" />
+      <input class="content-input" type="text" placeholder="내용" data-test="content-input" />
+      <button class="change-bg-color-btn" data-test="btn_change-bg-color">배경 색상 변경</button>
     </div>
 
     <div>
-      <button>이미지 생성</button>
+      <button class="create-btn" data-test="create">썸네일 생성</button>
     </div>
   </body>
 </html>
