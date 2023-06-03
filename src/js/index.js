@@ -10,7 +10,7 @@ const changeTitleText = () => {
 };
 
 const init = () => {
-  changeTitle();
+  changeTitleText();
 };
 
 document.addEventListener('DOMContentLoaded', () => {
