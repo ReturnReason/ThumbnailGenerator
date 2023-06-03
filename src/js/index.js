@@ -9,8 +9,18 @@ const changeTitleText = () => {
   });
 };
 
+const changeContentText = () => {
+  const $contentText = $('#content');
+  const $contentInput = $('.content-input');
+
+  $contentInput.addEventListener('input', ({ target }) => {
+    $contentText.innerText = target.value;
+  });
+};
+
 const init = () => {
   changeTitleText();
+  changeContentText();
 };
 
 document.addEventListener('DOMContentLoaded', () => {
