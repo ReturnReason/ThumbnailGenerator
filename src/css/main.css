@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'TheJamsil5Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo-Variable';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'NanumSquareNeo-Variable';
+}
+
+.container {
+  width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100vh;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  width: 650px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #b5c9fc;
+  cursor: default;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+}
+
+#title {
+  width: auto;
+  min-height: 30px;
+  text-align: center;
+}
+
+#content {
+  min-height: 30px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.input-container {
+  display: flex;
+  gap: 1rem;
+  width: 650px;
+  margin-top: 1.5rem;
+}
+
+.input-title-wrapper,
+.input-content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+input {
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.setting {
+  display: flex;
+  width: 650px;
+  gap: 1rem;
+}
+
+button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #9197a7;
+  color: #fff;
+  cursor: pointer;
+}
+
+.create-btn {
+  background-color: #5864ea;
+}
