@@ -30,7 +30,7 @@ export const genRandomColor = () => {
   return colorCode;
 };
 
-export const changeBgColor = () => {
+const changeBgColor = () => {
   const $thumbnail = $('.thumbnail');
   const $bgBtn = $('.change-bg-color-btn');
 
@@ -39,10 +39,27 @@ export const changeBgColor = () => {
   });
 };
 
+const createThumbnail = () => {
+  const $createBtn = $('.create-btn');
+  const $thumbnail = $('.thumbnail');
+
+  $createBtn.addEventListener('click', () => {
+    html2canvas($thumbnail).then((canvas) => {
+      const image = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+
+      link.href = image;
+      link.download = 'thumbnail.png';
+      link.click();
+    });
+  });
+};
+
 const init = () => {
   changeTitleText();
   changeContentText();
   changeBgColor();
+  createThumbnail();
 };
 
 document.addEventListener('DOMContentLoaded', () => {
