@@ -34,4 +34,12 @@ describe('💙 썸네일 생성기 테스트', () => {
       cy.get('.thumbnail').should('have.css', 'background-color', `rgb(136, 136, 136)`);
     });
   });
+
+  it('✨ 랜덤한 배경 색상을 만드는 genRandomColor 함수는 16진수 6자리를 반환한다', () => {
+    const colorCode = index.genRandomColor();
+    expect(colorCode).to.be.an('array').and.have.lengthOf(6);
+
+    const isHexCode = colorCode.every((code) => /^[0-9a-fA-F]$/.test(code));
+    expect(isHexCode).to.be.true;
+  });
 });
