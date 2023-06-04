@@ -1,3 +1,9 @@
+# 썸네일 생성기 v.1.0.0
+
+> preview
+
+![Honeycam 2023-06-04 22-07-55](https://github.com/PuddyProject/Puddy_FrontEnd/assets/48672106/055f2137-ad29-4880-9274-a6b192ed32d7)
+
 ## 기능 구현 목록
 
 > 핵심 기능 명세
