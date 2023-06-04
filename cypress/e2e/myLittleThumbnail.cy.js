@@ -1,3 +1,5 @@
+import * as index from '../../src/js/index';
+
 const contains = (targetEl, text) => {
   cy.get(targetEl).contains(text);
 };
@@ -23,5 +25,13 @@ describe('💙 썸네일 생성기 테스트', () => {
   it('✨ 내용 인풋 박스에 사용자가 "내용이네용"을 입력하면 썸네일 미리보기 내용에 "내용이네용"이 표시된다.', () => {
     cy.get('[data-test="content-input"]').type('내용이네용');
     cy.get('[data-test="content"]').should('have.text', '내용이네용');
+  });
+
+  it('✨ 배경 색상 변경 버튼을 누르면 배경 색상이 변경된다.', () => {
+    cy.window().then((win) => {
+      cy.stub(win.Math, 'random').returns(0.5);
+      cy.get('.change-bg-color-btn').click();
+      cy.get('.thumbnail').should('have.css', 'background-color', `rgb(136, 136, 136)`);
+    });
   });
 });
