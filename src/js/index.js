@@ -39,19 +39,24 @@ const changeBgColor = () => {
   });
 };
 
-const createThumbnail = () => {
-  const $createBtn = $('.create-btn');
+const downloadThumbnailImage = () => {
   const $thumbnail = $('.thumbnail');
 
-  $createBtn.addEventListener('click', () => {
-    html2canvas($thumbnail).then((canvas) => {
-      const image = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
+  html2canvas($thumbnail).then((canvas) => {
+    const image = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
 
-      link.href = image;
-      link.download = 'thumbnail.png';
-      link.click();
-    });
+    link.href = image;
+    link.download = 'thumbnail.png';
+    link.click();
+  });
+};
+
+const createThumbnail = () => {
+  const $createBtn = $('.create-btn');
+
+  $createBtn.addEventListener('click', () => {
+    downloadThumbnailImage();
   });
 };
 
