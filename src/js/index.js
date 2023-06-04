@@ -30,6 +30,15 @@ export const genRandomColor = () => {
   return colorCode;
 };
 
+export const changeBgColor = () => {
+  const $thumbnail = $('.thumbnail');
+  const $bgBtn = $('.change-bg-color-btn');
+
+  $bgBtn.addEventListener('click', () => {
+    $thumbnail.style.backgroundColor = `#${genRandomColor().join('')}`;
+  });
+};
+
 const init = () => {
   changeTitleText();
   changeContentText();
