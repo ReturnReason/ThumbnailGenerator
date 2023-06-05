@@ -42,4 +42,10 @@ describe('💙 썸네일 생성기 테스트', () => {
     const isHexCode = colorCode.every((code) => /^[0-9a-fA-F]$/.test(code));
     expect(isHexCode).to.be.true;
   });
+
+  it('✨ 썸네일 생성 버튼을 누르면 썸네일이 png 확장자를 가진 이미지로 다운로드된다.', () => {
+    cy.get('[data-test="create"]').click();
+    cy.wait(1000);
+    cy.readFile('cypress/downloads/thumbnail.png').should('exist');
+  });
 });
