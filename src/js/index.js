@@ -1,4 +1,4 @@
-const $ = (elem) => document.querySelector(elem);
+import { $ } from '../utils/getElem.js';
 
 const changeTitleText = () => {
   const $titleText = $('#title');
