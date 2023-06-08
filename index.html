@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./src/css/main.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
   </head>
-  </head>
   <body>
     <main class="container">
       <h1 class="header-title">💙 썸네일 생성기 💙</h1>
@@ -24,7 +23,7 @@
           <label for="title-input">제목</label>
           <input
             maxlength="20"
-            iu="title-input"
+            id="title-input"
             class="title-input"
             type="text"
             placeholder="제목을 입력하세요. (최대 20자)"
@@ -35,7 +34,7 @@
           <label for="content-input">내용</label>
           <input
             maxlength="20"
-            iu="content-input"
+            id="content-input"
             class="content-input"
             type="text"
             placeholder="내용을 입력하세요. (최대 20자)"
@@ -45,7 +44,14 @@
       </div>
 
       <div class="setting">
-        <button class="change-bg-color-btn" data-test="btn_change-bg-color">배경 색상 변경</button>
+        <div class="setting-bg-btn-wrapper">
+          <div class="bg-pick" id="random-bg-color">
+            <button class="change-bg-color-btn" data-test="btn_change-bg-color">랜덤 단색</button>
+            <button class="change-bg-color-btn" data-test="btn_change-g-bg-color">
+              랜덤 그라데이션
+            </button>
+          </div>
+        </div>
         <button class="create-btn" data-test="create">썸네일 생성</button>
       </div>
     </main>
