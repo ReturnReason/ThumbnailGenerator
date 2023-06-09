@@ -27,7 +27,7 @@ export const genRandomColor = () => {
     colorCode.push(candidate[pickIndex]);
   }
 
-  return colorCode;
+  return colorCode.join('');
 };
 
 const changeBgColor = () => {
@@ -35,7 +35,7 @@ const changeBgColor = () => {
   const $bgBtn = $('.change-bg-color-btn');
 
   $bgBtn.addEventListener('click', () => {
-    $thumbnail.style.backgroundColor = `#${genRandomColor().join('')}`;
+    $thumbnail.style.backgroundColor = `#${genRandomColor()}`;
   });
 };
 
@@ -64,6 +64,7 @@ const init = () => {
   changeTitleText();
   changeContentText();
   changeBgColor();
+  changeBgGradientColor();
   createThumbnail();
 };
 
