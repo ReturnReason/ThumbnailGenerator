@@ -30,12 +30,25 @@ export const genRandomColor = () => {
   return colorCode.join('');
 };
 
+export const genRandomGradientColor = () => {
+  return genRandomColor();
+};
+
 const changeBgColor = () => {
   const $thumbnail = $('.thumbnail');
   const $bgBtn = $('.change-bg-color-btn');
 
   $bgBtn.addEventListener('click', () => {
     $thumbnail.style.backgroundColor = `#${genRandomColor()}`;
+  });
+};
+
+const changeBgGradientColor = () => {
+  const $thumbnail = $('.thumbnail');
+  const $gbgBtn = $('.change-bg-g-color-btn');
+
+  $gbgBtn.addEventListener('click', () => {
+    $thumbnail.style.background = `linear-gradient(180deg, #${genRandomGradientColor()}, #${genRandomGradientColor()})`;
   });
 };
 
