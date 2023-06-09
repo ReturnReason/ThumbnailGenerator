@@ -19,10 +19,6 @@ const changeContentText = () => {
   });
 };
 
-export const genRandomGradientColor = () => {
-  return genRandomColor();
-};
-
 const changeBgColor = () => {
   const $thumbnail = $('.thumbnail');
   const $bgBtn = $('.change-bg-color-btn');
@@ -37,7 +33,7 @@ const changeBgGradientColor = () => {
   const $gbgBtn = $('.change-bg-g-color-btn');
 
   $gbgBtn.addEventListener('click', () => {
-    $thumbnail.style.background = `linear-gradient(180deg, #${genRandomGradientColor()}, #${genRandomGradientColor()})`;
+    $thumbnail.style.background = `linear-gradient(180deg, #${genRandomColor()}, #${genRandomColor()})`;
   });
 };
 
