@@ -1,4 +1,4 @@
-import * as index from '../../src/js/index';
+import { genRandomColor } from '../../src/utils/generateColor';
 
 const contains = (targetEl, text) => {
   cy.get(targetEl).contains(text);
@@ -36,7 +36,7 @@ describe('💙 썸네일 생성기 테스트', () => {
   });
 
   it('✨ 랜덤한 배경 색상을 만드는 genRandomColor 함수는 16진수 6자리를 반환한다', () => {
-    const colorCode = index.genRandomColor();
+    const colorCode = genRandomColor();
     expect(colorCode).to.be.lengthOf(6);
 
     const isHexCode = [...colorCode].every((code) => /^[0-9a-fA-F]$/.test(code));
