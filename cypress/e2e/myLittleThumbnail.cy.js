@@ -30,7 +30,7 @@ describe('💙 썸네일 생성기 테스트', () => {
   it('✨ 배경 색상 변경 버튼을 누르면 배경 색상이 변경된다.', () => {
     cy.window().then((win) => {
       cy.stub(win.Math, 'random').returns(0.5);
-      cy.get('.change-bg-color-btn').click();
+      cy.get('[data-test="btn_change-bg-color"]').click();
       cy.get('.thumbnail').should('have.css', 'background-color', `rgb(136, 136, 136)`);
     });
   });
