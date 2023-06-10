@@ -24,7 +24,7 @@ const changeBgColor = () => {
   const $bgBtn = $('.change-bg-color-btn');
 
   $bgBtn.addEventListener('click', () => {
-    $thumbnail.style.backgroundColor = `#${genRandomColor()}`;
+    $thumbnail.style.background = `#${genRandomColor()}`;
   });
 };
 
