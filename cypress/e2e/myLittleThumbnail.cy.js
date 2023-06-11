@@ -44,10 +44,12 @@ describe('💙 썸네일 생성기 테스트', () => {
   });
 
   it('✨ 랜덤 그라데이션 버튼을 누르면 2가지 색상을 가진 배경으로 적용된다.', () => {
+    const REG_EXP = /rgb\(\d+,\s\d+,\s\d+\)/g;
+
     cy.get('[data-test="btn_change-g-bg-color"]').click();
     cy.get('.thumbnail').should((thumbnail) => {
       const bg = thumbnail.css('background');
-      const rgbValues = bg.match(/rgb\(\d+,\s\d+,\s\d+\)/g);
+      const rgbValues = bg.match(REG_EXP);
       expect(rgbValues).to.have.lengthOf(2);
     });
   });
