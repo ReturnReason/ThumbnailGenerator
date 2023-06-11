@@ -107,7 +107,7 @@ input:focus {
   gap: 1rem;
 }
 
-button {
+.btn {
   width: 100%;
   height: 50px;
   border: 1px solid #5864ea;
@@ -119,7 +119,7 @@ button {
   transition: all 0s;
 }
 
-button:hover {
+.btn:hover {
   background-color: #eeefff;
 }
 
@@ -130,4 +130,14 @@ button:hover {
 
 .create-btn:hover {
   background-color: #3f49b8;
+}
+
+.change-bg-image-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#upload-img {
+  display: none;
 }
