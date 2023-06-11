@@ -46,14 +46,18 @@
       <div class="setting">
         <div class="setting-bg-btn-wrapper">
           <div class="bg-pick" id="random-bg-color">
-            <button class="change-bg-color-btn" data-test="btn_change-bg-color">랜덤 단색</button>
-            <button class="change-bg-g-color-btn" data-test="btn_change-g-bg-color">
+            <button class="btn change-bg-color-btn" data-test="btn_change-bg-color">
+              랜덤 단색
+            </button>
+            <button class="btn change-bg-g-color-btn" data-test="btn_change-g-bg-color">
               랜덤 그라데이션
             </button>
-            <button class="change-bg-image-btn" data-test="btn_change-image">이미지 등록</button>
+
+            <label for="upload-img" class="btn change-bg-image-btn">이미지 등록</label>
+            <input name="upload-img" id="upload-img" type="file" accept="image/*" />
           </div>
         </div>
-        <button class="create-btn" data-test="create">썸네일 생성</button>
+        <button class="btn create-btn" data-test="create">썸네일 생성</button>
       </div>
     </main>
     <script type="module" src="./src/js/index.js"></script>
