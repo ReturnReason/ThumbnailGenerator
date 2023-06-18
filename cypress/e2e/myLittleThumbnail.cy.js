@@ -4,6 +4,9 @@ const contains = (targetEl, text) => {
   cy.get(targetEl).contains(text);
 };
 
+const THUMBNAIL_TITLE = '제목입니당';
+const THUMBNAIL_CONTENT = '내용이네용';
+
 describe('💙 썸네일 생성기 테스트', () => {
   beforeEach(() => {
     cy.visit('../../index.html');
@@ -17,14 +20,14 @@ describe('💙 썸네일 생성기 테스트', () => {
     contains('[data-test="content"]', '내용을 입력해주세요');
   });
 
-  it('✨ 제목 인풋 박스에 사용자가 "제목입니당"을 입력하면 썸네일 미리보기 제목에 "제목입니당"이 표시된다.', () => {
-    cy.get('[data-test="title-input"]').type('제목입니당');
-    cy.get('[data-test="title"]').should('have.text', '제목입니당');
+  it(`✨ 제목 인풋 박스에 사용자가 "${THUMBNAIL_TITLE}"을 입력하면 썸네일 미리보기 제목에 "제목입니당"이 표시된다.`, () => {
+    cy.get('[data-test="title-input"]').type(THUMBNAIL_TITLE);
+    cy.get('[data-test="title"]').should('have.text', THUMBNAIL_TITLE);
   });
 
-  it('✨ 내용 인풋 박스에 사용자가 "내용이네용"을 입력하면 썸네일 미리보기 내용에 "내용이네용"이 표시된다.', () => {
-    cy.get('[data-test="content-input"]').type('내용이네용');
-    cy.get('[data-test="content"]').should('have.text', '내용이네용');
+  it(`✨ 내용 인풋 박스에 사용자가 "${THUMBNAIL_CONTENT}"을 입력하면 썸네일 미리보기 내용에 "내용이네용"이 표시된다.`, () => {
+    cy.get('[data-test="content-input"]').type(THUMBNAIL_CONTENT);
+    cy.get('[data-test="content"]').should('have.text', THUMBNAIL_CONTENT);
   });
 
   it('✨ 배경 색상 변경 버튼을 누르면 배경 색상이 변경된다.', () => {
@@ -59,4 +62,6 @@ describe('💙 썸네일 생성기 테스트', () => {
     cy.wait(1000);
     cy.readFile('cypress/downloads/thumbnail.png').should('exist');
   });
+
+  xit('✨ 이미지 등록 버튼을 누른 후 사용자가 이미지를 등록하면 썸네일 배경으로 적용된다.', () => {});
 });
