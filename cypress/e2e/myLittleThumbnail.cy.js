@@ -38,10 +38,13 @@ describe('💙 썸네일 생성기 테스트', () => {
     });
   });
 
-  it('✨ 랜덤한 배경 색상을 만드는 genRandomColor 함수는 16진수 6자리를 반환한다', () => {
+  it('✨ 랜덤한 배경 색상을 만드는 genRandomColor 함수는 6자리를 반환한다', () => {
     const colorCode = genRandomColor();
     expect(colorCode).to.be.lengthOf(6);
+  });
 
+  it('✨ genRandomColor함수는 16진수를 반환한다.', () => {
+    const colorCode = genRandomColor();
     const isHexCode = [...colorCode].every((code) => /^[0-9a-fA-F]$/.test(code));
     expect(isHexCode).to.be.true;
   });
