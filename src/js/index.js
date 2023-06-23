@@ -1,6 +1,8 @@
 import { $ } from '../utils/getElem.js';
 import { genRandomColor } from '../utils/generateColor.js';
 
+const $thumbnail = $('.thumbnail');
+
 const changeTitleText = () => {
   const $titleText = $('#title');
   const $titleInput = $('.title-input');
@@ -20,7 +22,6 @@ const changeContentText = () => {
 };
 
 const changeBgColor = () => {
-  const $thumbnail = $('.thumbnail');
   const $bgBtn = $('.change-bg-color-btn');
 
   $bgBtn.addEventListener('click', () => {
@@ -29,7 +30,6 @@ const changeBgColor = () => {
 };
 
 const changeBgGradientColor = () => {
-  const $thumbnail = $('.thumbnail');
   const $gbgBtn = $('.change-bg-g-color-btn');
 
   $gbgBtn.addEventListener('click', () => {
@@ -37,9 +37,14 @@ const changeBgGradientColor = () => {
   });
 };
 
-const downloadThumbnailImage = () => {
-  const $thumbnail = $('.thumbnail');
+const changeHandler = () => {
+  changeTitleText();
+  changeContentText();
+  changeBgColor();
+  changeBgGradientColor();
+};
 
+const downloadThumbnailImage = () => {
   html2canvas($thumbnail).then((canvas) => {
     const image = canvas.toDataURL('image/png');
     const link = document.createElement('a');
@@ -58,11 +63,11 @@ const createThumbnail = () => {
   });
 };
 
+const uploadImage = () => {};
+
 const init = () => {
-  changeTitleText();
-  changeContentText();
-  changeBgColor();
-  changeBgGradientColor();
+  changeHandler();
+  uploadImage();
   createThumbnail();
 };
 
