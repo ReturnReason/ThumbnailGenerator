@@ -63,7 +63,26 @@ const createThumbnail = () => {
   });
 };
 
-const uploadImage = () => {};
+const uploadImage = () => {
+  const $uploadImgBtn = $('#upload-img');
+
+  $uploadImgBtn.addEventListener('change', ({ target }) => {
+    const file = target.files[0];
+
+    if (file) {
+      const fileReader = new FileReader();
+
+      fileReader.onload = ({ target }) => {
+        const imgUrl = target.result;
+        const thumbImg = document.querySelector('.thumbnail');
+        thumbImg.style.background = `url(${imgUrl}) no-repeat center`;
+        thumbImg.style.backgroundSize = `cover`;
+      };
+
+      fileReader.readAsDataURL(file);
+    }
+  });
+};
 
 const init = () => {
   changeHandler();
