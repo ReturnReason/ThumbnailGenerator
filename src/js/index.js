@@ -1,5 +1,5 @@
-import { $ } from '../utils/getElem.js';
-import { genRandomColor } from '../utils/generateColor.js';
+import { $ } from './utils/getElem.js';
+import { genRandomColor } from './utils/generateColor.js';
 
 const $thumbnail = $('.thumbnail');
 

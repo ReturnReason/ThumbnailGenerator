@@ -1,4 +1,4 @@
-import { genRandomColor } from '../../src/utils/generateColor';
+import { genRandomColor } from '../../src/js/utils/generateColor';
 
 const contains = (targetEl, text) => {
   cy.get(targetEl).contains(text);
@@ -60,11 +60,13 @@ describe('💙 썸네일 생성기 테스트', () => {
     });
   });
 
+  it('✨ 이미지 등록 버튼을 누른 후 사용자가 이미지를 등록하면 썸네일 배경으로 적용된다.', () => {
+    cy.get('[data-test="btn_change-bg-image"]').click();
+  });
+
   it('✨ 썸네일 생성 버튼을 누르면 썸네일이 png 확장자를 가진 이미지로 다운로드된다.', () => {
     cy.get('[data-test="create"]').click();
     cy.wait(1000);
     cy.readFile('cypress/downloads/thumbnail.png').should('exist');
   });
-
-  xit('✨ 이미지 등록 버튼을 누른 후 사용자가 이미지를 등록하면 썸네일 배경으로 적용된다.', () => {});
 });
