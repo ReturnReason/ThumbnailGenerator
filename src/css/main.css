@@ -64,6 +64,23 @@
   margin-top: 15px;
 }
 
+.options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.option {
+  display: flex;
+  gap: 5px;
+}
+
+.option label {
+  margin: 0;
+}
+
 .input-container {
   display: flex;
   gap: 1rem;
