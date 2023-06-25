@@ -37,6 +37,35 @@ const changeBgGradientColor = () => {
   });
 };
 
+const darkenBg = () => {
+  const $darkenChecker = $('#darken');
+  let $after = null;
+
+  $darkenChecker.addEventListener('click', () => {
+    if ($after) {
+      document.head.removeChild($after);
+      $after = null;
+      return;
+    }
+
+    $after = document.createElement('style');
+    $after.innerHTML = `
+      .thumbnail::after {
+        content : '';
+        position : absolute;
+        left : 0;
+        top : 0;
+        width : 100%;
+        height : 100%;
+        display : block;
+        background : #00000050;
+      }
+    `;
+
+    document.head.appendChild($after);
+  });
+};
+
 const changeHandler = () => {
   changeTitleText();
   changeContentText();
@@ -86,6 +115,7 @@ const uploadImage = () => {
 
 const init = () => {
   changeHandler();
+  darkenBg();
   uploadImage();
   createThumbnail();
 };

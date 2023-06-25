@@ -45,6 +45,7 @@
   align-items: center;
   background: #b5c9fc;
   cursor: default;
+  position: relative;
 
   -webkit-user-select: none;
   -moz-user-select: none;
